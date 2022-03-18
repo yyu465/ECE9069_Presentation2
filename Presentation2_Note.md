@@ -5,17 +5,20 @@
 
 ####   CVE
 CVE stands for common vulnerabilities and exposures. 
-It is a publicly disclosed database which contains information security issues. CVE was launched by MITRE Corporation firstly in 1999. It is now managed and maintained by the National Cybersecurity FFRDC (Federally Funded Research and Development Center). Additionally, the sponsor of CVE is US Federal Government, with both the US Department of Homeland Security (DHS) and the Cybersecurity and Infrastructure Security Agency (CISA). [^1]
-CVE is like a free dictionary for individuals and organizations to improve their information level by identifying, defining, and cataloging publicly disclosed cybersecurity vulnerabilities. [^2]
+It is a publicly disclosed database that contains information security issues. CVE was launched by MITRE Corporation firstly in 1999. It is now managed and maintained by the National Cybersecurity FFRDC (Federally Funded Research and Development Center). Additionally, the sponsor of CVE is US Federal Government, with both the US Department of Homeland Security (DHS) and the Cybersecurity and Infrastructure Security Agency (CISA) [^1]
+CVE is similar to a free dictionary for individuals and organizations to improve their information level by identifying, defining, and cataloging publicly disclosed cybersecurity vulnerabilities. [^2]
 
 ####   Vulnerability  
-A vulnerability, a kind of flaw in software code, could used by hackers to gain direct access to a system or network. Normally, hackers could act as a super-power administrator by taking advantage of vulnerabilities in a system. Plus, both access and actions are mostly unauthorized. [^3]
+A vulnerability, a kind of flaw in software code, could be used by hackers to gain direct access to a system or network. Normally, hackers could act as super-power administrators by taking advantage of vulnerabilities in a system. Plus, both access and actions are mostly unauthorized. [^3]
 
 ####   OpenSSL 
 OpenSSL software is a robust, commercial-grade, full-featured toolkit for general-purpose cryptography and secure communication developed by OpenSSL Project. [^4]
 
+####   SSL/TLS
+SSL/TLS provides communication security and privacy over the Internet for applications such as web, email, instant messaging (IM), and some virtual private networks (VPNs). The Heartbleed bug is not a design flaw in SSL/TLS protocol specification. It is an implementation issue when the OpenSSL library provides SSL/TLS cryptographic services to the application. [^5]
+
 ####   CVSS 
-CVSS stands for Common Vulnerability Scoring System. This system provides a numerical (0-10) representation of the severity of an information security vulnerability. The more serious the vulnerability is, the higher score. 
+CVSS stands for Common Vulnerability Scoring System. This system provides a numerical (0-10) representation of the severity of an information security vulnerability. The more serious the vulnerability is the higher score. 
   | CVSS Score | Qualitative Rating |
   | ------ | ------ |
   | 0.0 | None |
@@ -24,14 +27,18 @@ CVSS stands for Common Vulnerability Scoring System. This system provides a nume
   | 7.0 – 8.9 | High |
   | 9.0 – 10.0 | Critical |
 
-![image](https://user-images.githubusercontent.com/46683010/158703747-406cd690-95c8-4a8d-9a37-2e4d6f86e821.png) [^5]
-![image](https://user-images.githubusercontent.com/46683010/158703788-e51841d7-2144-40a1-b9a4-5de4f984653c.png) [^6]
+![image](https://user-images.githubusercontent.com/46683010/158703747-406cd690-95c8-4a8d-9a37-2e4d6f86e821.png) [^6]
+![image](https://user-images.githubusercontent.com/46683010/158703788-e51841d7-2144-40a1-b9a4-5de4f984653c.png) [^7]
 
 ## CVE-2014-0610
 
 ####   Description
-Every specific vulnerability in CVE corresponds to a serial of number. CVE-2014-0160 refers to Heartbleed bug. 
-_“The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected, under normal conditions, by the SSL/TLS encryption used to secure the Internet. SSL/TLS provides communication security and privacy over the Internet for applications such as web, email, instant messaging (IM) and some virtual private networks (VPNs)”_ [^7]
+Every specific vulnerability in CVE corresponds to a serial number. CVE-2014-0160 refers to the Heartbleed bug. “The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptographic software library. This weakness allows stealing the information protected, under normal conditions, by the SSL/TLS encryption used to secure the Internet.” [^5]
+
+It allows anyone to read the memory of the protected system with the version of the vulnerable OpenSSL software. Attacks have the accessibilities to eavesdrop on communications, steal data directly from the services and users, and impersonate services and users. 
+
+Although this bug could be fixed by the new version released, it has already exposed a large number of encryption and decryption keys to the public. Therefore, the Heartbleed bug is considered a seriously treated and unique vulnerability because of the long exposure and ease of no trace attacks.
+
 ####   CVSS Scores & Vulnerability Types [^8]
   | ------ | ------ |
   | ------ | ------ |
@@ -46,27 +53,51 @@ _“The Heartbleed Bug is a serious vulnerability in the popular OpenSSL cryptog
   | CWE ID | 119 |
   
   
+####    Overflow and Obtain information
+![image](https://user-images.githubusercontent.com/46665590/159080691-197fade2-f5ac-4734-aefa-0b9d887a78e7.png). [^9]
+
+According to the Statistical data from CVE details website, overflow is the most common type of vulnerability with publishing dates after 1999. Overflow occurs when there is more data needs to be stored in a fixed size of memory. The extra information may overflow into adjacent memory space and usually cause system crashes and memory leakage. 
+
+Obtain Information, also known as information disclosure vulnerability, is leaking sensitive data unintentionally to its user or the public. Depending on the different context of different websites, all kinds of information including:
+
+•	Users’ data, such as username, password, email, etc.
+
+•	Sensitive data, such as commercial or financial data, patients’ information
+
+•	Technical details of the website, such as the infrastructure 
+
+It mainly occurs when there are insecure configurations of the related technologies, such as default configurations when the hacker displays overly verbose error messages. The impacts could be very severe. For example, an online shop website leaking the credit cards information of their customers. However, the severity in some cases depends on the purpose of the hacker and what the hacker will do with the leaked information. [^10]
+
+ 
 ####   What this vulnerability could affect?
-The hackers could take advantage of Heartbleed bug to gain the memory of the system when the system is using OpenSSL software in a version that the bug is not fixed. The secret keys during the traffic would be impacted directly. The whole communication would be eavesdropped. In practice, the Synopsys, Inc used this vulnerability to attack itself from outside. They finally stole from themselves the X.509 certificates secret keys, usernames, and passwords. From version 1.01 to 1.01f of OpenSSL did exist this vulnerability.
-OpenSSL fixed this bug in version 1.01g on 7th of April 2014.
+The hackers could take advantage of Heartbleed bug to gain the memory of the system when the system is using OpenSSL software in a version that the bug is not fixed. The secret keys during the traffic would be impacted directly. The whole communication would eavesdrop. In practice, Synopsys, Inc used this vulnerability to attack itself from outside. They finally stole from themselves the X.509 certificates secret keys, usernames, and passwords. From version 1.01 to 1.01f of OpenSSL did exist this vulnerability.
+OpenSSL fixed this bug in version 1.01g on the 7th of April 2014.
 
 
-## Exploit
+####   2 Public exploits
+•	 ![image](https://user-images.githubusercontent.com/46665590/159080883-a0cd6c00-285a-4821-beba-fd80e2d14d57.png)[^11]
+
+•	 ![image](https://user-images.githubusercontent.com/46665590/159080915-1cacb9e4-f0fe-4467-87c1-d64ecf2321a9.png)
+
+There are 2 public exploits found on the exploit database. The author Jared Stafford disclaimed copyright to the source code. The 2 exploits directly demonstrate the ‘Heartbleed’ memory disclosure caused by OpenSSL TLS Heartbeat. [^12]
+
+
+## Exploit Demo
 In this sample example, www.scrooge-and-marley.com will be the targeted server that we do the Heartbleed attack.
 
 #### Tool used in this exploit
 
 
 ##### nmap
-_“Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing.”_ [^9]
+_“Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing.”_ [^13]
 
 
 ##### Metasploit Framework (MSF) /msfconsole
-_“The Metasploit Framework is a Ruby-based, modular penetration testing platform that enables you to write, test, and execute exploit code.”_ [^10]
+_“The Metasploit Framework is a Ruby-based, modular penetration testing platform that enables you to write, test, and execute exploit code.”_ [^14]
 
 The msfconsole is a command line tool of the Metasploit Framework (MSF). (The following screenshot is the interface) The console provides users all the options available in the MSF. 
 
-![image](https://user-images.githubusercontent.com/46683010/158705066-b99c2103-f26b-4f8f-8391-d0862498e7f0.png)
+![image](https://user-images.githubusercontent.com/46683010/158705066-b99c2103-f26b-4f8f-8391-d0862498e7f0.png)[^15]
 
 ##### Exploit Process
   1. Test the web site from the vulnerability
@@ -98,20 +129,39 @@ The msfconsole is a command line tool of the Metasploit Framework (MSF). (The fo
   ```    
   
   
-  [^12]
+  [^16]
   
 # References 
 
-[^1]: https://www.balbix.com/insights/what-is-a-cve/ 
-[^2]: https://www.cve.org/About/Overview 
-[^3]: https://www.csoonline.com/article/3204884/what-is-cve-its-definition-and-purpose.html
-[^4]: https://www.openssl.org/ 
-[^5]: https://www.balbix.com/insights/understanding-cvss-scores/ 
-[^6]: https://www.cvedetails.com/ 
-[^7]: https://heartbleed.com/ 
-[^8]: https://www.cvedetails.com/cve/CVE-2014-0160/ 
-[^9]: https://nmap.org/  
-[^10]: https://docs.rapid7.com/metasploit/msf-overview/ 
-[^11]: https://www.offensive-security.com/metasploit-unleashed/msfconsole/ 
-[^12]: https://www.youtube.com/watch?v=-qzZIHJ0HLU 
+[^1] https://www.balbix.com/insights/what-is-a-cve/ 
+
+[^2] https://www.cve.org/About/Overview 
+
+[^3]https://www.csoonline.com/article/3204884/what-is-cve-its-definition-and-purpose.html
+
+[^4] https://www.openssl.org/ 
+
+[^5] https://heartbleed.com/
+
+[^6] https://www.balbix.com/insights/understanding-cvss-scores/ 
+
+[^7] https://www.cvedetails.com/ 
+
+[^8] https://www.cvedetails.com/cve/CVE-2014-0160/ 
+
+[^9] https://www.cvedetails.com/vulnerabilities-by-types.php
+
+[^10] https://portswigger.net/web-security/information-disclosure
+
+[^11] https://www.exploit-db.com/exploits/32764 
+
+[^12] https://www.exploit-db.com/exploits/32745
+
+[^13] https://nmap.org/  
+
+[^14] https://docs.rapid7.com/metasploit/msf-overview/
+
+[^15] https://www.offensive-security.com/metasploit-unleashed/msfconsole/ 
+
+[^16] https://www.youtube.com/watch?v=-qzZIHJ0HLU 
 
