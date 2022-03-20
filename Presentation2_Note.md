@@ -5,7 +5,7 @@
 
 ####   CVE
 CVE stands for common vulnerabilities and exposures. 
-It is a publicly disclosed database that contains information security issues. CVE was launched by MITRE Corporation firstly in 1999. It is now managed and maintained by the National Cybersecurity FFRDC (Federally Funded Research and Development Center). Additionally, the sponsor of CVE is US Federal Government, with both the US Department of Homeland Security (DHS) and the Cybersecurity and Infrastructure Security Agency (CISA) [^1]
+It is a publicly disclosed database that contains information security issues. CVE was launched by MITRE Corporation firstly in 1999. It is now managed and maintained by the National Cybersecurity FFRDC (Federally Funded Research and Development Center). Additionally, the sponsor of CVE is US Federal Government, with both the US Department of Homeland Security (DHS) and the Cybersecurity and Infrastructure Security Agency (CISA). [^1]
 CVE is similar to a free dictionary for individuals and organizations to improve their information level by identifying, defining, and cataloging publicly disclosed cybersecurity vulnerabilities. [^2]
 
 ####   Vulnerability  
@@ -133,35 +133,35 @@ The msfconsole is a command line tool of the Metasploit Framework (MSF). (The fo
   
 # References 
 
-[^1] https://www.balbix.com/insights/what-is-a-cve/ 
+[^1]: https://www.balbix.com/insights/what-is-a-cve/ 
 
-[^2] https://www.cve.org/About/Overview 
+[^2]: https://www.cve.org/About/Overview 
 
-[^3]https://www.csoonline.com/article/3204884/what-is-cve-its-definition-and-purpose.html
+[^3]: https://www.csoonline.com/article/3204884/what-is-cve-its-definition-and-purpose.html
 
-[^4] https://www.openssl.org/ 
+[^4]: https://www.openssl.org/ 
 
-[^5] https://heartbleed.com/
+[^5]: https://heartbleed.com/
 
 [^6] https://www.balbix.com/insights/understanding-cvss-scores/ 
 
-[^7] https://www.cvedetails.com/ 
+[^7]: https://www.cvedetails.com/ 
 
-[^8] https://www.cvedetails.com/cve/CVE-2014-0160/ 
+[^8]: https://www.cvedetails.com/cve/CVE-2014-0160/ 
 
-[^9] https://www.cvedetails.com/vulnerabilities-by-types.php
+[^9]: https://www.cvedetails.com/vulnerabilities-by-types.php
 
-[^10] https://portswigger.net/web-security/information-disclosure
+[^10]: https://portswigger.net/web-security/information-disclosure
 
-[^11] https://www.exploit-db.com/exploits/32764 
+[^11]: https://www.exploit-db.com/exploits/32764 
 
-[^12] https://www.exploit-db.com/exploits/32745
+[^12]: https://www.exploit-db.com/exploits/32745
 
-[^13] https://nmap.org/  
+[^13]: https://nmap.org/  
 
-[^14] https://docs.rapid7.com/metasploit/msf-overview/
+[^14]: https://docs.rapid7.com/metasploit/msf-overview/
 
-[^15] https://www.offensive-security.com/metasploit-unleashed/msfconsole/ 
+[^15]: https://www.offensive-security.com/metasploit-unleashed/msfconsole/ 
 
-[^16] https://www.youtube.com/watch?v=-qzZIHJ0HLU 
+[^16]: https://www.youtube.com/watch?v=-qzZIHJ0HLU 
 
