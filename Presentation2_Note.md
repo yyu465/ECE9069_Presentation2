@@ -143,7 +143,7 @@ The msfconsole is a command line tool of the Metasploit Framework (MSF). (The fo
 
 [^5]: https://heartbleed.com/
 
-[^6] https://www.balbix.com/insights/understanding-cvss-scores/ 
+[^6]: https://www.balbix.com/insights/understanding-cvss-scores/ 
 
 [^7]: https://www.cvedetails.com/ 
 
