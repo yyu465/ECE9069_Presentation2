@@ -84,6 +84,8 @@ There are 2 public exploits found on the exploit database. The author Jared Staf
 
 ## Exploit Demo
 In this sample example, www.scrooge-and-marley.com will be the targeted server that we do the Heartbleed attack.
+The teams disclaims copyright to the commands and all the demo is just for educational purpose.
+
 
 #### Tool used in this exploit
 
